@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
-
+import './quize.dart';
+import './result.dart';
 void main() => runApp(MyApp());
-var questions = [
+const _questions = const [
   {
     'questionText': 'What\'s your favorite color?',
-    'answers': ['Black', 'Red', 'White']
+    'answers': [
+      {'text':'Black','scores':1}, 
+      {'text':'Red','scores':5}, 
+      {'text':'White', 'scores':1}
+    ]
   },
   {
     'questionText': 'What\'s your favorite animal',
-    'answers': ['Snake', 'Lion', 'Cat']
+     'answers': [
+      {'text':'Cat','scores':6}, 
+      {'text':'Dog','scores':5}, 
+      {'text':'Lion', 'scores':1}
+    ]
   },
   {
     'questionText': 'What\'s your favorit Instructor',
-    'answers': ['Max', 'Mosh', 'Minko']
+    'answers': [
+      {'text':'Max','scores':6}, 
+      {'text':'Minko','scores':5}, 
+      {'text':'Mosh', 'scores':1}
+    ]
   },
 ];
 
@@ -28,11 +39,20 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
-  void _answerQuestion() {
+  var _totalScore = 0;
+  void _answerQuestion(int score) {
     setState(() {
       _questionIndex = _questionIndex + 1;
+      _totalScore+= score;
     });
     print(_questionIndex);
+  }
+
+  void _resetQuize(){
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
   }
 
   @override
@@ -42,15 +62,13 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My first app'),
         ),
-        body: Column(
-          children: [
-            Question(questions[_questionIndex]['questionText']),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ),
+        body: _questionIndex < _questions.length ? Quize( 
+          questions: _questions,
+          questionIndex: _questionIndex,
+          answerQuestion: _answerQuestion,
+
+          ) :
+          Result(_totalScore, _resetQuize),
       ),
     );
   }
