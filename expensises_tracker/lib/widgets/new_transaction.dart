@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './user_transaction.dart';
 
 class NewTransaction extends StatelessWidget {
   final Function addTx;
