@@ -42,12 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: txTitle,
         amount: txAmount,
         date: DateTime.now());
-
+ 
         setState(() {
           _userTransactions.add(newTx);
         });
   }
-  
+
     void _startAddNewTransaction(BuildContext ctx) {
       showModalBottomSheet(
           context: ctx,
@@ -96,3 +96,4 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     }
   }
+
