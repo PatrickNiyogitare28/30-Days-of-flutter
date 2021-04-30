@@ -38,6 +38,7 @@ class Chart extends StatelessWidget {
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
+
       child: Padding(
         padding: EdgeInsets.all(10),
         child: Row(
@@ -51,6 +52,7 @@ class Chart extends StatelessWidget {
               totalSpending==0.0 ? 0.0 : (data['amount'] as double)/totalSpending),
           );
         }).toList(),
+
 
     ),
       ),
