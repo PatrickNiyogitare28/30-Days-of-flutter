@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/courses_header.dart';
+import '../widgets/list_courses.dart';
 
 class CoursesList extends StatelessWidget {
   const CoursesList({Key key}) : super(key: key);
@@ -27,7 +28,9 @@ class CoursesList extends StatelessWidget {
              decoration: BoxDecoration(
                color: Colors.white
              ),
-             child: CoursesHeader()),
+             child: CoursesHeader()
+             ),
+             ListCourses()
         ],
       )
       );

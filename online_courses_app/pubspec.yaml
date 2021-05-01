@@ -48,6 +48,7 @@ flutter:
   assets:
     - assets/icons/menu.png
     - assets/icons/progress.png
+    - assets/icons/js.png
     - assets/images/avatar-img.png
   #   - images/a_dot_ham.jpeg
 
