@@ -25,9 +25,60 @@ class ListCourses extends StatelessWidget {
                          child: Container(
                            height: 200,
                            decoration: BoxDecoration(
-                             color: Color.fromRGBO(196, 196, 196,0.5),
+                             color: Color.fromRGBO(196, 196, 196,0.1),
                              borderRadius: BorderRadius.circular(20),
                            ),
+                           child:  Padding(
+        padding: const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 10),
+        child: Column(
+          
+          children: [
+            Align(
+               alignment: Alignment.centerLeft,
+               child: Text('CODING',
+               style: TextStyle(
+                 fontSize: 11,
+                 color: Colors.black54
+               )
+               ),
+            ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text('Basics   of       HTML  and CSS',
+                 style: TextStyle(
+                 fontSize: 15,
+                 color: Colors.black87,
+                 fontWeight: FontWeight.bold,
+             ),
+             ),
+            ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Align(
+                 alignment: Alignment.centerLeft,
+                 child: Text('In this course we wil learn the basic toos for coders',
+                 style: TextStyle(
+                   fontSize: 12,
+                   color: Colors.black54
+                 )
+                 ),
+            ),
+              ),
+             Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset("assets/images/default.png",
+                    width: 30,
+               ),
+                  ),
+                ),
+             )
+          ],
+        ),
+      ),
                          ),
                        )
                      ],
@@ -46,6 +97,7 @@ class ListCourses extends StatelessWidget {
                            color: Color.fromRGBO(196, 196, 196,0.5),
                            borderRadius: BorderRadius.circular(20)
                          ),
+                         
                        ), 
                        Padding(
                          padding: const EdgeInsets.only(top: 20),

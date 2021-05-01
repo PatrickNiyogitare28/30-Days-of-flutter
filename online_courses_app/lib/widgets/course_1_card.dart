@@ -42,7 +42,7 @@ class CourseOneCard extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.asset("assets/icons/js.png",
+                    child: Image.asset("assets/images/default.png",
                     width: 30,
                ),
                   ),
