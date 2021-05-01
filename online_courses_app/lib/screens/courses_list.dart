@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/courses_header.dart';
 import '../widgets/list_courses.dart';
+import '../widgets/navigation_bar.dart';
 
 class CoursesList extends StatelessWidget {
   const CoursesList({Key key}) : super(key: key);
@@ -22,17 +23,21 @@ class CoursesList extends StatelessWidget {
            ),
          )
       ],),
-      body: Column(
-        children: <Widget>[
-           Container(
-             decoration: BoxDecoration(
-               color: Colors.white
-             ),
-             child: CoursesHeader()
-             ),
-             ListCourses()
-        ],
-      )
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+             Container(
+               decoration: BoxDecoration(
+                 color: Colors.white
+               ),
+               child: CoursesHeader()
+               ),
+               ListCourses()
+          ],
+        ),
+      ),
+      bottomNavigationBar: NavigationBar(),
       );
   }
 }

@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        primaryColor: Color.fromRGBO(30, 51, 99, 1),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: CoursesList(),
