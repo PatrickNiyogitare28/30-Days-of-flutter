@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import './new_page.dart';
 void main () => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,9 +11,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(
-        primarySwatch: Colors.deepPurple
+        primarySwatch: Colors.deepPurple,
+        primaryColor: defaultTargetPlatform == TargetPlatform.iOS ? Colors.grey[50] : null
       ),
       home: new HomePage(),
+      // routes: <String, WidgetBuilder>{
+      //   "/a": (BuildContext context) => new NewPage("New Page")
+      // }
     );
   }
 }
@@ -34,7 +39,7 @@ class HomePage extends StatelessWidget {
               accountName: Text("Patrick Niyo"), 
               accountEmail: Text("patrickniyogitare28@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
+                backgroundColor: Theme.of(context).platform == TargetPlatform.iOS ? Colors.deepPurple : Colors.white,
                 child: Text("P",),
 
               ),
@@ -48,10 +53,22 @@ class HomePage extends StatelessWidget {
             ListTile(
               title: Text("Page One"),
               trailing: new Icon(Icons.arrow_upward),
+              onTap: () => {
+                Navigator.of(context).pop(),
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext contex) =>  NewPage("Page One"))
+                )
+                },
             ),
             ListTile(
               title: Text("Page Two"),
               trailing: new Icon(Icons.arrow_upward),
+              onTap: () => {
+                Navigator.of(context).pop(),
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext contex) =>  NewPage("Page Two"))
+                )
+              },
             ),
             Divider(),
             ListTile(
